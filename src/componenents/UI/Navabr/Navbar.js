@@ -9,7 +9,6 @@ import burgerlogo from "../../UI/Modal/burger-logo.png"
 const navbar = (props) => (
 
     <Fragment>
-
     <Navbar bg="warning"  expand="lg" >
     <Navbar.Brand href="#home" onclick={props.clicked}></Navbar.Brand>
     <img
