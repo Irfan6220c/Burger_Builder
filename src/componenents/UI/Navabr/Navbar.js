@@ -10,7 +10,7 @@ const navbar = (props) => (
 
     <Fragment>
     <Navbar bg="warning"  expand="lg" >
-    <Navbar.Brand href="#home" onclick={props.clicked}></Navbar.Brand>
+    <Navbar.Brand href="#home" onClick={props.clicked}></Navbar.Brand>
     <img
         alt="NoImage"
         src={burgerlogo}

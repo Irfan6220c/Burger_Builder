@@ -6,7 +6,7 @@ const ordersummary = (props) => {
   let itemList = [];
   itemList = Object.keys(props.ingredients).map((i) => {
     return (
-      <li>
+      <li key={i}>
         {" "}
         {i} : {props.ingredients[i]}{" "}
       </li>
@@ -19,7 +19,7 @@ const ordersummary = (props) => {
       <p> A delicious burger with the following ingredients: </p>
       <ul>{itemList}</ul>
       <p> Countinue to checkout?    </p>
-      <p> <bold> Your total bill is {props.price} dollars </bold> </p>
+      <p>  Your total bill is {props.price} dollars  </p>
       <Button classname="Burron Danger" clicked={props.purchasecancel}>CANCEL</Button>
       <Button classname="Burron Success" clicked={props.purchasegoon}> ORDER NOW </Button>
     </Fragment>

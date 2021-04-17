@@ -17,7 +17,7 @@ const buildcontrols = (props) => {
     let controlsa=controls.map((ctrl) => {
 
         //console.log(ctrl.type);
-        return (<BuildControl label={ctrl.label} removed= {() => props.ingredientremoved(ctrl.type)}  added={() => props.ingredientadded(ctrl.type)}/>)
+        return (<BuildControl label={ctrl.label} key={ctrl.type} removed= {() => props.ingredientremoved(ctrl.type)}  added={() => props.ingredientadded(ctrl.type)}/>)
        })
 
 
