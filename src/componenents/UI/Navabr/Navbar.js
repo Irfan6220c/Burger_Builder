@@ -3,6 +3,8 @@ import { Navbar, Nav } from 'react-bootstrap';
 import "./Navbar.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import burgerlogo from "../../UI/Modal/burger-logo.png"
+import {Link} from "react-router-dom"
+
 
 
 
@@ -19,8 +21,8 @@ const navbar = (props) => (
         className="d-inline-block align-top"
       />
     <Nav className="mr-auto Navlocal">
-      <Nav.Link href="#home">Burger Builder</Nav.Link>
-      <Nav.Link href="#features">Checkout</Nav.Link>
+    <Link  className="nav-link" to="/">Burger Builder</Link>
+    <Link className="nav-link" to="/orders">Orders</Link>
     </Nav>
   </Navbar>
   </Fragment>

@@ -41,7 +41,7 @@ class Burgerbuilder extends Component {
     const total = values.reduce(
       (accumulator, currentValue) => accumulator + currentValue
     );
-    console.log(total);
+    //console.log(total);
     this.setState({ purchaseable: total > 0 });
   };
 
@@ -72,14 +72,26 @@ class Burgerbuilder extends Component {
   }
   purchasinghandler = () => {
      
-    console.log("clicked");
+    //console.log("clicked");
 
     this.setState({purchasing:false});
 
   }
   purchasecontinue = () => {
 
-    console.log(this.props.history.push("/Checkout"))
+    //console.log(this.props.history.push("/Checkout"))
+    const  queryParams=[];
+    for (let i in this.state.ingredients){
+      queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]))
+    }
+    queryParams.push('Price=' + this.state.totalprice)
+
+    //console.log(queryParams);
+    const queryString= queryParams.join("&");
+    this.props.history.push({
+      pathname: '/Checkout',
+      search: '?' + queryString
+    })
 
     //alert("YOU CONTINUE")
 

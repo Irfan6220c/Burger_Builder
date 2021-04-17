@@ -6,7 +6,7 @@ import Navbar from "../UI/Navabr/Navbar"
 const layout = (props) => (
   <Fragment>
       <Navbar />
-    <div> Toolbar, Sidebar, Backdrop </div>
+    <div> </div>
     <main className="Content">
          {props.children} 
          </main>
