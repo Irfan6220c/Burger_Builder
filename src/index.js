@@ -1,25 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {BrowserRouter} from "react-router-dom";
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import {createStore, applyMiddleware, compose} from "redux"
+import burgerbuilderreducer from "./store/reducer/burgerBuilder"
+import thunk from "redux-thunk"
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store=createStore(burgerbuilderreducer,composeEnhancers(
+  applyMiddleware(thunk)
+));
 
-const app= (
-
-<BrowserRouter>
-
-    <App />
-
-      </BrowserRouter>
-
-)
-
-ReactDOM.render(
-  app,
-  document.getElementById('root')
+const app = (
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 );
+
+ReactDOM.render(app, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
